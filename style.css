@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-image: url(sky.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow-x: hidden;
+}
+.highway {
+  height: 200px;
+  width: 500%;
+  background-image: url(road.jpg);  /* make sure path is correct */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-repeat: repeat-x;
+  background-size: auto 100%;  /* changed to auto 100% */
+  z-index: 1;
+  animation: highway 1s linear infinite;
+}
+.city {
+  height: 250px;
+  width: 1000%;
+  background-image: url(city.png);
+  position: absolute;
+  bottom: 200px;
+  left: 0;
+  right: 0;
+  background-repeat: repeat-x;
+  z-index: 1;
+  animation: city 25s linear infinite;
+  -webkit-animation: city 25s linear infinite;
+}
+.car {
+  width: 500px;
+  left: 50%;
+  bottom: 140px; /* increased from 100px to 140px to raise the car */
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.car img {
+  width: 100%;
+  animation: car 1s linear infinite;
+  -webkit-animation: car 1s linear infinite;
+}
+
+.wheel {
+  left: 50%;
+  bottom: 250px;
+  position: absolute;
+  z-index: 2;
+}
+
+.wheel img {
+  width: 82px;
+  height: 82px;
+  animation: wheel 1s linear infinite;
+  -webkit-animation: wheel 0.5s linear infinite;
+}
+
+.wheel1 {
+  left: -183px;
+  position: absolute;
+}
+.wheel2 {
+  left: 80px;
+  position: absolute;
+}
+
+.airplane {
+    position: absolute;
+    top: 100px;
+    width: 200px;
+    animation: airplane 20s linear infinite;
+    transform: translateX(-200px);
+    z-index: 2;
+}
+
+.airplane img {
+    width: 100%;
+    transform: rotate(23deg);  /* increased angle from -5deg to -15deg for more tilt */
+}
+
+@keyframes highway {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-1000px);  /* adjusted value */
+    }
+}
+
+@keyframes city{
+    100% {
+        transform: translateX(-1400px);
+    }   
+}
+
+@keyframes car {
+  100% {
+    transform: translateY(-1px);
+  }
+  50% {
+    transform: translateY(1px);
+  }
+  0% {
+    transform: translateY(-1px);
+  }
+}
+@keyframes wheel {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes airplane {
+    0% {
+        left: -20%;
+    }
+    100% {
+        left: 120%;
+    }
+}
